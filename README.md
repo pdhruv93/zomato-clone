@@ -1,3 +1,5 @@
+Inspired from Zomato. Just for learning purpose. No intent for commercial use.
+
 Reference for assets
 =====================================================
 https://www.zomato.com/ncr/delivery-in-mayur-vihar-phase-2

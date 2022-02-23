@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, FlatList, Image} from 'react-native';
+import {Text, View, StyleSheet, FlatList, ImageBackground, Image} from 'react-native';
 import {styles} from '../styles/Styles';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -12,11 +12,18 @@ export default Template3 = (props) => {
                 <FlatList
                     data={props.data}
                     keyExtractor={({ id }) => id.toString()}
-                    showsHorizontalScrollIndicator={false}
                     renderItem={
                         ({ item }) =>
                             <View style={[style.card, styles.shadow]}>
-                                <Image style={style.image} source={item.source} />
+                                <ImageBackground  style={style.image} source={item.source}>
+                                    <View style={{flexDirection: "row", backgroundColor: styles.WHITE_COLOR, padding:5, position: 'absolute', bottom: 10, right: 10, borderRadius: 10}}>
+                                        <MaterialCommunityIcons name="clock-outline" color={"#717cba"} size={20}/>
+                                        <Text style={{color: styles.BLACK_COLOR, fontWeight: 'bold'}}>
+                                            {item.delivery_time}
+                                        </Text>
+                                    </View>
+                                </ImageBackground>
+
                                 <View style={{margin: 15}}>
                                     <View style={{flexDirection: "row", justifyContent: "space-between"}}>
                                         <Text style={styles.title}>{item.title}</Text>
