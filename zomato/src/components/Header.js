@@ -3,10 +3,11 @@ import {Text, View, StyleSheet, Image} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from '../styles/Styles';
 
+
 export default Header = (props) => {
 
     return (
-        <View style={{flexDirection: "row", justifyContent: "space-between", marginVertical: 10, marginHorizontal: styles.FIXED_MARGIN, alignItems: "center"}}>
+        <View style={style.container}>
             <View style={{flexDirection: "row"}}>
                 <View style={{justifyContent: "center", alignItems: "center"}}>
                     <MaterialCommunityIcons  name="map-marker-outline" color={styles.PRIMARY_COLOR} size={40}/>
@@ -28,6 +29,14 @@ export default Header = (props) => {
 
 
 const style = StyleSheet.create({
+
+    container:{
+        flexDirection: "row", 
+        justifyContent: "space-between", 
+        marginVertical: 10, 
+        marginHorizontal: styles.FIXED_MARGIN, 
+        alignItems: "center",
+    },
     
     profileImage: {
         borderRadius: 20,

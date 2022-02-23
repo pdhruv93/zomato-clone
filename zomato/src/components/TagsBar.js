@@ -1,12 +1,24 @@
 import React from 'react';
-import {Text, View, StyleSheet, FlatList, Image} from 'react-native';
+import {Text, View, StyleSheet, FlatList} from 'react-native';
 import {styles} from '../styles/Styles';
 import tags_data from '../assets/data/Tags_data';
+import Animated, {useAnimatedStyle} from 'react-native-reanimated';
 
-export default TagsBar = () => {
+
+export default TagsBar = (props) => {
+
+    const searchBarAnimationStyle = useAnimatedStyle(() => ({
+        transform: [
+            {
+                translateY: props.offsetScrolled.value>80 && props.currentScrollAmount.value > 0  ? props.offsetScrolled.value-80 : 0
+            },
+        ],
+    }));
+
 
     return (
-        <View style={{marginVertical: 15, marginHorizontal: styles.FIXED_MARGIN}}>
+        <View>
+        <Animated.View style={[searchBarAnimationStyle, style.container]}>
 
             <FlatList
                 data={tags_data}
@@ -22,6 +34,7 @@ export default TagsBar = () => {
                 }
             />
 
+        </Animated.View>
         </View>
     );
 
@@ -29,6 +42,13 @@ export default TagsBar = () => {
 
 
 const style = StyleSheet.create({
+
+    container:{
+        paddingVertical: 15, 
+        marginHorizontal: styles.FIXED_MARGIN,
+        backgroundColor: styles.WHITE_COLOR,
+        zIndex: 1
+    },
     
     tag: {
         borderColor: styles.BORDER_GRAY,
