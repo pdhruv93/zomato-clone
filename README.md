@@ -1,5 +1,17 @@
 Inspired from Zomato. Just for learning purpose. No intent for commercial use.
 
+<h2>Original Zomato App</h2>
+<img src="screenshots/original/IMG_0654.PNG" width="350">
+<img src="screenshots/original/IMG_0656.PNG" width="350">
+<img src="screenshots/original/IMG_0658.PNG" width="350">
+
+
+<h2>Cloned App</h2>
+<img src="screenshots/clone/1.png" width="350">
+<img src="screenshots/clone/2.png" width="350">
+<img src="screenshots/clone/3.png" width="350">
+
+
 Reference for assets
 =====================================================
 https://www.zomato.com/ncr/delivery-in-mayur-vihar-phase-2
